@@ -1,0 +1,256 @@
+:root {
+  --primary: #FFE468;
+  --secondary: #8CC641;
+  --light: #F2F2F2;
+  --dark: #272630;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: '100vh';
+}
+
+footer {
+  margin-top: auto;
+}
+
+.login-menu {
+  width: 150px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  position: relative;
+  margin-left: 30px;
+  padding: 35px 0;
+  font-size: 18px;
+  color: var(--light);
+  outline: none;
+  transition: .5s;
+}
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+  padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .navbar-dark .navbar-nav .nav-link::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 5px;
+    bottom: 0;
+    left: 50%;
+    background: var(--primary);
+    transition: .5s;
+  }
+
+  .navbar-dark .navbar-nav .nav-link:hover::before,
+  .navbar-dark .navbar-nav .nav-link.active::before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-dark .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  line-height: 1;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.bg-hero {
+  background: url(./img/logo.webp) no-repeat;
+  background-size: 30%;
+  background-position: right;
+}
+
+@media (max-width: 991.98px) {
+  .bg-hero {
+    background: url(./img/output-onlinepngtools.webp) no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+button.btn-success {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.about-start,
+.about-end {
+  background: url(./img/about-bg.webp) center center no-repeat;
+  background-size: cover;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.service-item,
+.contact-item {
+  background: url(./img/output-onlinepngtools.webp) top center no-repeat;
+  background-size: cover;
+  transition: .2s;
+}
+
+.service-item:hover,
+.contact-item:hover {
+  background: url(./img/output-onlinepngtools.webp) bottom center no-repeat;
+  background-size: cover;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #8CC641;
+}
+
+.service-item .service-icon,
+.contact-item .contact-icon {
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  color: var(--secondary);
+  background: #FFFFFF;
+  transform: rotate(-45deg);
+}
+
+.service-item .service-icon div,
+.contact-item .contact-icon div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  transition: .5s;
+}
+
+.service-item .service-icon i,
+.contact-item .contact-icon i {
+  transform: rotate(45deg);
+  transition: .5s;
+}
+
+.service-item:hover .service-icon div,
+.contact-item:hover .contact-icon div {
+  background: var(--secondary);
+}
+
+.service-item:hover .service-icon i,
+.contact-item:hover .contact-icon i {
+  color: var(--primary);
+}
+
+.service-item a.btn {
+  position: relative;
+  bottom: -30px;
+  opacity: 0;
+}
+
+.service-item:hover a.btn {
+  bottom: 0;
+  opacity: 1;
+}
+
+.bg-quote {
+  background: url(./img/quote.webp) top right no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 991.98px) {
+  .bg-quote {
+    background-size: cover;
+  }
+}
+
+.team-item {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.team-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(./img/team.webp) bottom center no-repeat;
+  background-size: cover;
+  height: 90px;
+  padding: 0 30px;
+  right: 45px;
+  left: 45px;
+  bottom: -45px;
+  transition: .5s;
+}
+
+.team-item:hover .team-text {
+  height: 100%;
+  bottom: 0;
+}
+
+.team-social {
+  position: absolute;
+  transition: .1s;
+  transition-delay: .0s;
+  opacity: 0;
+}
+
+.team-item:hover .team-social {
+  transition-delay: .3s;
+  opacity: 1;
+}
+
+
+
+@media (max-width: 991.98px) {
+
+  .bg-call-to-action,
+  .bg-footer {
+    background-size: cover;
+  }
+}
+
+.iframeproba {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  height: 100%;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-call-to-action {
+  background: url(./img/call-to-action.webp) top left no-repeat;
+  background-size: contain;
+}
