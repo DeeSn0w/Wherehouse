@@ -23,7 +23,7 @@ namespace Wherehouse_backend.Controllers
 
             if (tulajdonos == null)
             {
-                return BadRequest("Invalid name or password");
+                return BadRequest("Hibás felhasználónév vagy jelszó");
             }
 
             return Ok(tulajdonos);
