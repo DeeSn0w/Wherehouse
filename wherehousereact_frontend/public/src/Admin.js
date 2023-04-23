@@ -85,7 +85,7 @@ export function Admin() {
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
-                    console.log('Deleted ' + data.length + ' related rows from Birtokolt table');
+                    console.log('Törölve ' + data.length + ' a Birtokolt táblából');
                     return Promise.all(data.map(birtokolt => {
                         return fetch(api_url + '/' + birtokolt.id, { method: 'DELETE' });
                     }));
@@ -96,7 +96,7 @@ export function Admin() {
                 fetch(api_url + '/' + id, { method: 'DELETE' })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error('Network response was not ok');
+                            throw new Error('Network hiba');
                         }
                         return response.json();
                     })
@@ -187,7 +187,7 @@ export function Admin() {
         fetch('https://localhost:7240/Alkalmazott?id=' + id, { method: 'DELETE' })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network hiba');
                 }
                 return response.json();
             })
@@ -240,11 +240,11 @@ export function Admin() {
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
-                    console.log('Deleted ' + data.length + ' related rows from Birtokolt table');
+                    console.log('Törölve ' + data.length + ' a Birtokolt táblából');
                     return Promise.all(data.map(birtokolt => {
                         const raktarToUpdate = raktarak.find(raktar => raktar.id === birtokolt.raktarid);
                         if (!raktarToUpdate) {
-                            throw new Error('Related raktar row not found');
+                            throw new Error('Raktár nem található');
                         }
                         return fetch('https://localhost:7240/Raktar?id=' + birtokolt.raktarid, {
                             method: 'PUT',
@@ -261,7 +261,7 @@ export function Admin() {
                         })
                             .then(response => response.json())
                             .then(data => {
-                                console.log('Updated related row from Raktar table');
+                                console.log('Módosítva a Raktar táblából');
                                 return fetch('https://localhost:7240/Birtokolt/' + birtokolt.id, { method: 'DELETE' });
                             });
                     }));
@@ -272,7 +272,7 @@ export function Admin() {
                 fetch('https://localhost:7240/Tulajdonos?id=' + id, { method: 'DELETE' })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error('Network response was not ok');
+                            throw new Error('Network hiba');
                         }
                         return response.json();
                     })

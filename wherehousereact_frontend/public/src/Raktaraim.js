@@ -48,7 +48,7 @@ export function Raktaraim() {
       .map((birtokolt) => {
         const raktarToUpdate = raktarak.find((raktar) => raktar.id === raktarid);
         if (!raktarToUpdate) {
-          throw new Error("Related raktar row not found");
+          throw new Error("Raktar nem található");
         }
         const updatePromise = fetch(`https://localhost:7240/Raktar?id=${raktarid}`, {
           method: "PUT",
@@ -61,14 +61,14 @@ export function Raktaraim() {
 
         const deletePromise = fetch(`https://localhost:7240/Birtokolt?id=${birtokolt.id}`, {
           method: "DELETE",
-        }).then(() => console.log("Deleted related row from Birtokolt table"))
+        }).then(() => console.log("Raktar törölve a Birtokolt táblából"))
           .finally(() => {
             window.location.reload();
           });
-        return Promise.all([updatePromise, deletePromise]).then(() => console.log("Updated and deleted related rows"));
+        return Promise.all([updatePromise, deletePromise]).then(() => console.log("Mezők módosítva, törölve"));
       });
     return Promise.all(promises).then(() => {
-      console.log("All related rows updated and deleted");
+      console.log("Mezők módosítva, törölve");
     });
   }
 

@@ -69,7 +69,7 @@ export function RaktarSingle(props) {
                                                     method: "POST",
                                                 })
                                                     .then((response) => {
-                                                        console.log("Order confirmed successfully");
+                                                        console.log("Sikeres foglalás!");
                                                         window.alert("Bérlésedet rögzítettük, hamarosan megkeresünk!");
                                                         fetch(`https://localhost:7240/Raktar`, {
                                                             method: "PUT",
@@ -88,18 +88,18 @@ export function RaktarSingle(props) {
                                                         })
                                                             .then(() => {
                                                                 setElvittek(elvittek)
-                                                                console.log("raktar.elvittek property updated successfully");
+                                                                console.log("raktar.elvittek sikeresen frissítve");
                                                                 navigate("/termekek");
                                                             })
                                                             .catch((error) => {
-                                                                console.error("Error updating raktar.elvittek property:", error);
+                                                                console.error("Hiba raktar.elvittek frissítésekor:", error);
                                                             });
                                                     })
                                                     .catch((error) => {
-                                                        console.error("Error confirming order:", error);
+                                                        console.error("Hiba a foglalással:", error);
                                                     });
                                             } else {
-                                                console.error("User ID not found in local storage");
+                                                console.error("Nincs ilyen felhasználó a gyorsítótárban!");
                                             }
                                         }}
 

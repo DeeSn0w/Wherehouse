@@ -36,13 +36,13 @@ export function LoginModal({ isOpen, onClose }) {
     if (response.ok) {
       const userData = await response.json();
       localStorage.setItem('user', JSON.stringify(userData));
-      console.log('Login successful!');
+      console.log('Sikeres bejelentkezés!');
       console.log(userData)
       window.alert('Sikeres bejelentkezés!');
       navigate("/");
       onClose();
     } else {
-      console.log('Login failed!');
+      console.log('Bejelentkezés sikertelen!');
       window.alert('Helytelen adatok!');
     }
   };

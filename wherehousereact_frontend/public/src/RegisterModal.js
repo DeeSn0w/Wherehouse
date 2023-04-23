@@ -21,7 +21,7 @@ export function RegisterModal({ isOpen, onClose }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Registering user with ${nev}:${email}:${password}`);
+    console.log(`Felhasználó regisztrálása ${nev}:${email}:${password}`);
 
     const response = await fetch('https://localhost:7240/Tulajdonos', {
       method: 'POST',
@@ -38,14 +38,14 @@ export function RegisterModal({ isOpen, onClose }) {
     const data = await response.json();
 
     if (response.ok) {
-      console.log(`User registered successfully with id ${data.id}`);
+      console.log(`Sikeres regisztráció ${data.id}`);
       onClose();
       setnev('');
       setEmail('');
       setPassword('');
       window.alert('Sikeres regisztráció!');
     } else {
-      console.error(`Failed to register user: ${data.message}`);
+      console.error(`Hiba regisztráláskor: ${data.message}`);
       window.alert('Regisztráció sikertelen!');
     }
   }
