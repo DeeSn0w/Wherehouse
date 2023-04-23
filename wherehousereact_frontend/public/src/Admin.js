@@ -85,7 +85,7 @@ export function Admin() {
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
-                    console.log('Törölve ' + data.length + ' a Birtokolt táblából');
+                    console.log('Törölve ' + data.length + ' adat a Birtokolt táblából');
                     return Promise.all(data.map(birtokolt => {
                         return fetch(api_url + '/' + birtokolt.id, { method: 'DELETE' });
                     }));
@@ -240,7 +240,7 @@ export function Admin() {
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
-                    console.log('Törölve ' + data.length + ' a Birtokolt táblából');
+                    console.log('Törölve ' + data.length + ' adat a Birtokolt táblából');
                     return Promise.all(data.map(birtokolt => {
                         const raktarToUpdate = raktarak.find(raktar => raktar.id === birtokolt.raktarid);
                         if (!raktarToUpdate) {
