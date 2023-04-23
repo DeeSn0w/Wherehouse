@@ -88,11 +88,11 @@ export function RaktarSingle(props) {
                                                         })
                                                             .then(() => {
                                                                 setElvittek(elvittek)
-                                                                console.log("raktar.elvittek sikeresen frissítve");
+                                                                console.log("A raktar.elvittek sikeresen frissítve");
                                                                 navigate("/termekek");
                                                             })
                                                             .catch((error) => {
-                                                                console.error("Hiba raktar.elvittek frissítésekor:", error);
+                                                                console.error("Hiba a raktar.elvittek frissítésekor:", error);
                                                             });
                                                     })
                                                     .catch((error) => {
