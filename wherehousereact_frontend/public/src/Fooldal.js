@@ -21,7 +21,6 @@ export function Fooldal() {
 
     return (
         <div style={{ backgroundColor: '#6c757d', minHeight: '100vh' }}>
-            {/* Hero Start */}
             <div className="container-fluid bg-warning bg-hero" style={{ marginBottom: '90px' }}>
                 <div className="container py-5">
                     <div className="row justify-content-start">
@@ -32,7 +31,6 @@ export function Fooldal() {
                     </div>
                 </div>
             </div>
-            {/* Hero End */}
 
             <div className="container-fluid bg-secondary">
                 <div className="container">

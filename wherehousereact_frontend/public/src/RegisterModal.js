@@ -8,14 +8,12 @@ export function RegisterModal({ isOpen, onClose }) {
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    // disable scrolling when the modal is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
-    // cleanup function to re-enable scrolling when the component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -39,7 +37,6 @@ export function RegisterModal({ isOpen, onClose }) {
 
     const data = await response.json();
 
-    // handle success or error response
     if (response.ok) {
       console.log(`User registered successfully with id ${data.id}`);
       onClose();

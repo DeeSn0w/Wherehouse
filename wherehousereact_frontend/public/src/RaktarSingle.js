@@ -65,14 +65,12 @@ export function RaktarSingle(props) {
                                         className="btn btn-success bi bi-check"
                                         onClick={() => {
                                             if (user) {
-                                                // if the user ID is found in local storage, send the request to the server
                                                 fetch(`https://localhost:7240/Birtokolt?raktarId=${raktar.id}&tulajId=${user.id}`, {
                                                     method: "POST",
                                                 })
                                                     .then((response) => {
                                                         console.log("Order confirmed successfully");
                                                         window.alert("Bérlésedet rögzítettük, hamarosan megkeresünk!");
-                                                        // send another request to update the raktar.elvittek property to true
                                                         fetch(`https://localhost:7240/Raktar`, {
                                                             method: "PUT",
                                                             body: JSON.stringify({
@@ -101,12 +99,11 @@ export function RaktarSingle(props) {
                                                         console.error("Error confirming order:", error);
                                                     });
                                             } else {
-                                                // if the user ID is not found in local storage, display an error message
                                                 console.error("User ID not found in local storage");
                                             }
                                         }}
 
-                                        disabled={!user} // disable the button if user is not logged in
+                                        disabled={!user}
                                     >
                                         Kibérlem
                                     </button>

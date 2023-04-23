@@ -46,12 +46,10 @@ export function Raktaraim() {
     const promises = birtokoltak
       .filter((birtokolt) => birtokolt.raktarid === raktarid)
       .map((birtokolt) => {
-        // Find the raktar object that matches raktarid
         const raktarToUpdate = raktarak.find((raktar) => raktar.id === raktarid);
         if (!raktarToUpdate) {
           throw new Error("Related raktar row not found");
         }
-        // Update the related raktar row
         const updatePromise = fetch(`https://localhost:7240/Raktar?id=${raktarid}`, {
           method: "PUT",
           body: JSON.stringify({
@@ -61,7 +59,6 @@ export function Raktaraim() {
           headers: { "Content-Type": "application/json" },
         }).then((response) => response.json());
 
-        // Delete the related birtokolt row after updating the raktar row
         const deletePromise = fetch(`https://localhost:7240/Birtokolt?id=${birtokolt.id}`, {
           method: "DELETE",
         }).then(() => console.log("Deleted related row from Birtokolt table"))

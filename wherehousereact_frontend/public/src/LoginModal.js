@@ -8,14 +8,12 @@ export function LoginModal({ isOpen, onClose }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // disable scrolling when the modal is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
-    // cleanup function to re-enable scrolling when the component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -24,7 +22,6 @@ export function LoginModal({ isOpen, onClose }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Send login request to the server
     const response = await fetch(`https://localhost:7240/Login?name=${nev}&password=${password}`, {
       method: 'POST',
       headers: {
@@ -36,7 +33,6 @@ export function LoginModal({ isOpen, onClose }) {
       })
     });
 
-    // Check if login was successful
     if (response.ok) {
       const userData = await response.json();
       localStorage.setItem('user', JSON.stringify(userData));
