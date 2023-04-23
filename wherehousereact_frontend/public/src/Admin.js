@@ -41,7 +41,6 @@ export function Admin() {
 
     const user = JSON.parse(localStorage.getItem('user'));
 
-    //addRaktar
 
     function addRaktar(id, cím, tipus, ar, meret, kepurl, elvittek) {
         const newCim = prompt("Add meg a raktár címét:", cím);
@@ -79,7 +78,6 @@ export function Admin() {
             });
     }
 
-    //deleteRaktar
 
     function deleteRaktar(id) {
         console.log(id);
@@ -113,7 +111,6 @@ export function Admin() {
             });
     }
 
-    //updateRaktar
 
     function updateRaktar(id, cím, tipus, ar, meret, kepurl, elvittek) {
         const newCim = prompt("Add meg a raktár címét:", cím);
@@ -152,7 +149,6 @@ export function Admin() {
                 window.location.reload();
             });
     }
-    //addAlkalmazott
 
     function addAlkalmazott(id, nev, pozicio, fizetes) {
         const newNev = prompt("Add meg az alkalmazott nevét:", nev);
@@ -185,7 +181,6 @@ export function Admin() {
             });
     }
 
-    //deleteAlkalmazott
 
     function deleteAlkalmazott(id) {
         console.log(id);
@@ -206,7 +201,6 @@ export function Admin() {
             });
     }
 
-    //updateAlkalmazott
 
     function updateAlkalmazott(id, nev, pozicio, fizetes) {
         const newNev = prompt("Add meg az alkalmazott nevét:", nev);
@@ -239,7 +233,6 @@ export function Admin() {
             });
     }
 
-    //deleteTulajdonos
 
     function deleteTulajdonos(id) {
         console.log(id);
@@ -294,7 +287,6 @@ export function Admin() {
             });
     }
 
-    //updateTulajdonos
 
     function updateTulajdonos(id, nev, email, password) {
         const newNev = prompt("Add meg a tulajdonos felhasználónevét:", nev);
