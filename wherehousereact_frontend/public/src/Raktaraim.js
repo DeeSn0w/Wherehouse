@@ -48,7 +48,7 @@ export function Raktaraim() {
       .map((birtokolt) => {
         const raktarToUpdate = raktarak.find((raktar) => raktar.id === raktarid);
         if (!raktarToUpdate) {
-          throw new Error("Raktar nem található");
+          throw new Error("Raktár nem található");
         }
         const updatePromise = fetch(`https://localhost:7240/Raktar?id=${raktarid}`, {
           method: "PUT",
@@ -61,7 +61,7 @@ export function Raktaraim() {
 
         const deletePromise = fetch(`https://localhost:7240/Birtokolt?id=${birtokolt.id}`, {
           method: "DELETE",
-        }).then(() => console.log("Raktar törölve a Birtokolt táblából"))
+        }).then(() => console.log("Raktár törölve a Birtokolt táblából"))
           .finally(() => {
             window.location.reload();
           });
