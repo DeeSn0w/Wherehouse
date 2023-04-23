@@ -45,7 +45,7 @@ export function RegisterModal({ isOpen, onClose }) {
       setPassword('');
       window.alert('Sikeres regisztráció!');
     } else {
-      console.error(`Hiba regisztráláskor: ${data.message}`);
+      console.error(`Hiba a regisztráláskor: ${data.message}`);
       window.alert('Regisztráció sikertelen!');
     }
   }
